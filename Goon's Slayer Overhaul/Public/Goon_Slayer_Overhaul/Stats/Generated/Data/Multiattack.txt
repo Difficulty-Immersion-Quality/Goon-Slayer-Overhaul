@@ -2,6 +2,7 @@
 // Bug Fix: No deals unarmed ability modifier Slashing damage on top of the base 1d4 Slashing damage as a baseline, in addition to the extra unarmed ability modifier Slashing damage if the target is Bleeding.
 // Bug Fix: Conditional damage is displayed as different unarmed ability modifier damage instances, instead of 4d6 Slashing damage.
 // Changes: Now looks for more Bleeding-like conditions, instead of just the Bleeding condition itself.
+// TODO: Add unarmed damage for Tavern Brawler synergy?
 
 new entry "Target_Multiattack_Slayer"
 type "SpellData"
