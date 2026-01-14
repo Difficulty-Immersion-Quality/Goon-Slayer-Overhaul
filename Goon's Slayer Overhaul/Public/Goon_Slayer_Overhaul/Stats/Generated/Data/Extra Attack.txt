@@ -1,0 +1,28 @@
+// ==================================== Slayer's Extra Attack ====================================
+// Bug Fix: Slayer's Extra Attack no longer has the description of Improved Extra Attack, now replaced by the regular Extra Attack description.
+
+new entry "Slayer_ExtraAttack"
+type "PassiveData"
+// using "Slayer_ExtraAttack_2"
+using "Slayer_ExtraAttack"
+// Slayer's Extra Attack
+// data "DisplayName" "h6f2954a9g1ae9g4148ga339g7b3c96231b83;1"
+// You can make two additional attacks after attacking with your main-hand weapon.
+// data "Description" "h36aba2dbg6f37g4343ga32egcab0fd7edcb3;1"
+// Can make an additional free attack after making an unarmed or weapon attack. If you gain the Extra Attack feature from more than one class, they don't add together.
+data "Description" "he37249cfg5d71g499cg82d9gc369133f2066;2"
+// data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnCast) and SlayerFormExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased()) or (context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('EXTRA_ATTACK_Q'))"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnCast)):ApplyStatus(SELF,EXTRA_ATTACK_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_Q') and not HasAnyExtraAttack()):ApplyStatus(EXTRA_ATTACK, 100, 1)"
+// data "StatsFunctors" "IF(((HasAnyHaste(context.Source) and not HasStatus('EXTRA_ATTACK_TRACKER', context.Source)) or (not HasAnyHaste(context.Source))) and context.HasContextFlag(StatsFunctorContext.OnCast)):ApplyStatus(SELF,EXTRA_ATTACK_Q,100,1);IF(((HasAnyHaste(context.Target) and not HasStatus('EXTRA_ATTACK_TRACKER')) or (not HasAnyHaste(context.Target))) and context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_Q') and not HasAnyExtraAttack()):ApplyStatus(EXTRA_ATTACK, 100, 1)"
+
+// ==================================== Slayer's Improved Extra Attack ====================================
+
+new entry "Slayer_ExtraAttack_2"
+type "PassiveData"
+// using "ExtraAttack_2"
+using "Slayer_ExtraAttack_2"
+// Slayer's Improved Extra Attack
+// data "DisplayName" "hec2ed490g8eb3g4e10g975eg0dcb432019ed;1"
+// data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnCast) and SlayerFormExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased()) or (context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and StatusId('EXTRA_ATTACK_2_Q'))"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnCast)):ApplyStatus(SELF,EXTRA_ATTACK_2_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_2_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_2_Q') and not HasAnyExtraAttack()):ApplyStatus(EXTRA_ATTACK_2, 100, 1)"
+// data "StatsFunctors" "IF(((HasAnyHaste(context.Source) and not HasStatus('EXTRA_ATTACK_TRACKER', context.Source)) or (not HasAnyHaste(context.Source))) and context.HasContextFlag(StatsFunctorContext.OnCast)):ApplyStatus(SELF,EXTRA_ATTACK_2_Q,100,1);IF(((HasAnyHaste(context.Target) and not HasStatus('EXTRA_ATTACK_TRACKER')) or (not HasAnyHaste(context.Target))) and context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_2_Q,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_2_Q') and not HasAnyExtraAttack()):ApplyStatus(EXTRA_ATTACK_2, 100, 1)"
