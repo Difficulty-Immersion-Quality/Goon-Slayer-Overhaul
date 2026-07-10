@@ -18,9 +18,9 @@ data "SpellSuccess" "DealDamage(3d8+ProficiencyBonus, Piercing,Magical);ApplySta
 data "SpellFail" "DealDamage(3d8+ProficiencyBonus, Piercing,Magical)"
 // data "TargetConditions" "Character()"
 // data "Icon" "Action_Monster_Slayer_DeathGrowl"
-// Piercing Growl
+// // Piercing Growl
 // data "DisplayName" "hf93d65fagd804g40bag8ea9g28d9b92525b8;2"
-// Fierce howls rise from your guts and wound nearby foes, possibly inflicting &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="FEARED"&gt;Fear&lt;/LSTag&gt;.
+// // Fierce howls rise from your guts and wound nearby foes, possibly inflicting &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="FEARED"&gt;Fear&lt;/LSTag&gt;.
 // data "Description" "hcb7f37deg6476g471egb556g506e968440da;5"
 // data "TooltipDamageList" "DealDamage(3d8+4, Piercing)"
 data "TooltipDamageList" "DealDamage(3d8+ProficiencyBonus, Piercing)"

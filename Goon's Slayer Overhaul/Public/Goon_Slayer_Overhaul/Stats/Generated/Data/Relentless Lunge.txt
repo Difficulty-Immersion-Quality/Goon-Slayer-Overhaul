@@ -19,9 +19,9 @@ data "SpellRoll" "not SavingThrow(Ability.Strength, ManeuverSaveDC(), AdvantageO
 // data "TargetConditions" "not Self() and not Dead()"
 // data "Trajectories" "7222025b-2f7e-4f87-9bf9-3597d5807a90"
 // data "Icon" "Action_Monster_Slayer_RelentlessLunge"
-// Relentless Lunge
+// // Relentless Lunge
 // data "DisplayName" "h5e3f57e5gdea9g4ebbg9df1g97e925c7f36b;2"
-// Leap sinuously and smash into your foes, possibly knocking them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+// // Leap sinuously and smash into your foes, possibly knocking them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
 // data "Description" "h758abd63g8589g4828g9941g7b42c2fd291a;10"
 // data "DescriptionParams" "DealDamage(2d6+UnarmedMeleeAbilityModifier,Bludgeoning)"
 // data "TooltipDamageList" "DealDamage(2d6+UnarmedMeleeAbilityModifier,Bludgeoning)"

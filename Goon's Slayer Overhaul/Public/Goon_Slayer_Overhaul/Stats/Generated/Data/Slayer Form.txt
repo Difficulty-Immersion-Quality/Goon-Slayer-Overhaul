@@ -8,12 +8,12 @@
 // data "Cooldown" "OncePerRest"
 // data "SpellProperties" "IF(not CharacterLevelGreaterThan(9)):ApplyStatus(SLAYER_PLAYER,100,-1); IF(CharacterLevelGreaterThan(9)):ApplyStatus(SLAYER_PLAYER_10,100,-1)"
 // data "Icon" "Action_DarkUrge"
-// Slayer
+// // Slayer
 // data "DisplayName" "h7ee059fega56bg48d4g99abg0a1ee50238d1;2"
-// Manifest your savage compulsions and assume your sinuously deadly Slayer form. Your Slayer form has [1] (increases to [2] at Level 10).
+// // Manifest your savage compulsions and assume your sinuously deadly Slayer form. Your Slayer form has [1] (increases to [2] at Level 10).
 // data "Description" "hdd8b157fgb469g4004g8fd3gac6677d4c088;5"
 // data "DescriptionParams" "RegainHitPoints(98);RegainHitPoints(153)"
-// While in Slayer form, you can't talk or cast spells.&lt;br&gt;&lt;br&gt;When your Slayer form drops to 0 &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, you revert to your normal form.
+// // While in Slayer form, you can't talk or cast spells.&lt;br&gt;&lt;br&gt;When your Slayer form drops to 0 &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, you revert to your normal form.
 // data "ExtraDescription" "h637f3195ge71eg4c06g9c33ge08587bf042b;4"
 // data "PrepareSound" "CrSpell_Prepare_Slayer_BloodBath"
 // data "PrepareLoopSound" "CrSpell_Loop_Slayer_BloodBath"
@@ -28,9 +28,9 @@
 // new entry "SLAYER_PLAYER"
 // type "StatusData"
 // data "StatusType" "POLYMORPHED"
-// Slayer Form
+// // Slayer Form
 // data "DisplayName" "h9c3fab7dgfc09g4e0cga76fg742b28d673c1;2"
-// Affected entity has embraced its savage compulsions, allowing it to assume its Slayer form.
+// // Affected entity has embraced its savage compulsions, allowing it to assume its Slayer form.
 // data "Description" "h67dd3fb6ge300g42f0gaea3g0ecb374132c7;2"
 // data "Icon" "Action_DarkUrge"
 // data "StackId" "WILDSHAPE"

@@ -13,9 +13,9 @@ data "SpellRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC())"
 // data "SpellFail" "DealDamage(2d10/2,Slashing)"
 // data "TargetConditions" "not Self() and not Dead()"
 // data "Icon" "Action_Monster_Slayer_Bloodbath"
-// Sumptuous Blood Bath
+// // Sumptuous Blood Bath
 // data "DisplayName" "h570f57d9g6601g4a31ga490g137fd5bf308b;2"
-// Slash open a foe's vital arteries. They start &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, and the ensuing gush continuously heals your wounds.
+// // Slash open a foe's vital arteries. They start &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, and the ensuing gush continuously heals your wounds.
 // data "Description" "h6864c126g19c9g47b4gab82gdfc791590721;6"
 // data "TooltipDamageList" "DealDamage(2d10,Slashing);RegainHitPoints(2d6,1575c661-c7a1-44c7-b07d-d47b57164841)"
 // data "TooltipAttackSave" "Constitution"

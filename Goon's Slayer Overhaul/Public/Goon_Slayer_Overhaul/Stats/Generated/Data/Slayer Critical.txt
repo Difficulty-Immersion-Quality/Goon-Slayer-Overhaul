@@ -5,7 +5,7 @@
 // new entry "SLAYER_CRITICAL"
 // type "StatusData"
 // data "StatusType" "BOOST"
-// %%% EMPTY
+// // %%% EMPTY
 // data "DisplayName" "ha995fba6g20c7g4c09g8651g954514b0f1bb;1"
 // data "StackId" "SLAYER_CRITICAL"
 // data "Passives" "Slayer_Critical"
@@ -14,7 +14,7 @@
 new entry "Slayer_Critical"
 type "PassiveData"
 using "Slayer_Critical"
-// %%% EMPTY
+// // %%% EMPTY
 // data "DisplayName" "h20cadcbbg1351g4de2gb8bcg3ea6e2c57d89;1"
 // data "Properties" "IsHidden"
 // data "Boosts" "IF(HasStatus('PRONE') and (SpellId('Target_Slam_Slayer') or (SpellId('Target_Slam_Slayer_10')))):CriticalDamageOnHit();IF(HasStatus('DAZED') and SpellId('Target_Multiattack_Slayer')):CriticalDamageOnHit()"

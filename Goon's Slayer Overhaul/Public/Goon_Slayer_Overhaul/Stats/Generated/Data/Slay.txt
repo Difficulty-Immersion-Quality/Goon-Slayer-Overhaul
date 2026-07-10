@@ -11,12 +11,12 @@ using "Target_Slam_Slayer"
 // data "SpellSuccess" "DealDamage(max(1,4d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,SourceSpellDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
 data "SpellSuccess" "DealDamage(max(1,4d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('SG_Bleeding') and not HasStatus('SG_Prone')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('SG_Bleeding') and HasStatus('SG_Prone') and not SavingThrow(Ability.Strength,ManeuverSaveDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
 // data "Icon" "Action_Monster_Slayer_Slam"
-// Slay
+// // Slay
 // data "DisplayName" "h460e20c6g102cg45e3g87c9g9b4c31d971b2;5"
-// Rake your malevolent claws across the body of your target.
+// // Rake your malevolent claws across the body of your target.
 // data "Description" "h454884c4g6f72g47f2g9fc0g32a264d71cac;3"
 // data "DescriptionParams" "DealDamage(4d6+UnarmedMeleeAbilityModifier, Slashing)"
-// If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, they are afflicted with &lt;LSTag Type="Status" Tooltip="CONTAGION_FLESH_ROT_1"&gt;Contagion Poisoned: Stage 1&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, the attack will be a Critical Hit and the target will possibly become &lt;LSTag Type="Status" Tooltip="CONTAGION_FLESH_ROT"&gt;Stricken With Flesh Rot&lt;/LSTag&gt;.
+// // If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, they are afflicted with &lt;LSTag Type="Status" Tooltip="CONTAGION_FLESH_ROT_1"&gt;Contagion Poisoned: Stage 1&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, the attack will be a Critical Hit and the target will possibly become &lt;LSTag Type="Status" Tooltip="CONTAGION_FLESH_ROT"&gt;Stricken With Flesh Rot&lt;/LSTag&gt;.
 // data "ExtraDescription" "h6dfdd4c4ga640g4895gb482gc6da5856e23e;4"
 // data "TooltipDamageList" "DealDamage(4d6+UnarmedMeleeAbilityModifier, Slashing)"
 // data "TooltipStatusApply" "ApplyStatus(CONTAGION_FLESH_ROT_1 ,100,3);ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
