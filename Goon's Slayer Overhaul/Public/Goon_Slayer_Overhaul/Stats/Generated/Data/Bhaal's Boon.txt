@@ -6,9 +6,9 @@ new entry "BHAALS_BOON_SLAYER"
 type "StatusData"
 data "StatusType" "BOOST"
 using "BHAALS_BOON_SLAYER"
-// Bhaal's Boon
+// // Bhaal's Boon
 // data "DisplayName" "h12bece1dgb65cg4828g95degf47375267661;2"
-// Bhaal revels in the affected entity's gift for murder, granting it a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; per marked kill.&lt;br&gt;&lt;br&gt;[1] point of this bonus Armour Class is lost each time the Slayer avoids an attack.
+// // Bhaal revels in the affected entity's gift for murder, granting it a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; per marked kill.&lt;br&gt;&lt;br&gt;[1] point of this bonus Armour Class is lost each time the Slayer avoids an attack.
 // data "Description" "h0d64397fg9bebg4386gb429gcfd56f374fed;2"
 // data "DescriptionParams" "1"
 // data "Icon" "GenericIcon_Intent_Buff"
@@ -29,6 +29,6 @@ data "Passives" "Goon_Bhaals_Boon_Slayer"
 new entry "Goon_Bhaals_Boon_Slayer"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Conditions" ""
 data "StatsFunctorContext" "OnAttacked"
+data "Conditions" "IsAttack()"
 data "StatsFunctors" "IF(IsMiss()):SetStatusDuration(BHAALS_BOON_SLAYER, -1, Add)"
