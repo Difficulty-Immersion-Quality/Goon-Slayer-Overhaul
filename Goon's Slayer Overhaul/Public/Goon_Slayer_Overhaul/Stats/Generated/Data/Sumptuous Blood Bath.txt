@@ -1,6 +1,7 @@
 // ==================================== Piercing Growl ====================================
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
 // Bug Fix: The level 10 version now displays the correct conditional healing in the tooltip.
+// Changes: Now properly functions as unarmed damaged, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
 
 new entry "Target_BloodBath_Slayer"
 type "SpellData"
@@ -10,7 +11,9 @@ using "Target_BloodBath_Slayer"
 // data "SpellRoll" "not SavingThrow(Ability.Constitution, SourceSpellDC())"
 data "SpellRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC())"
 // data "SpellSuccess" "DealDamage(2d10,Slashing);ApplyStatus(BLEEDING,100,3);ApplyStatus(SELF,VEINSPLITTER,100,3)"
+data "SpellSuccess" "DealDamage(2d10+UnarmedDamage*0,Slashing);ApplyStatus(BLEEDING,100,3);ApplyStatus(SELF,VEINSPLITTER,100,3)"
 // data "SpellFail" "DealDamage(2d10/2,Slashing)"
+data "SpellFail" "DealDamage(2d10/2+UnarmedDamage*0,Slashing)"
 // data "TargetConditions" "not Self() and not Dead()"
 // data "Icon" "Action_Monster_Slayer_Bloodbath"
 // // Sumptuous Blood Bath
@@ -36,6 +39,25 @@ data "SpellRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC())"
 // data "DamageType" "Slashing"
 // data "Sheathing" "DontChange"
 
+new entry "VEINSPLITTER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "VEINSPLITTER"
+// // Revitalising Gore
+// data "DisplayName" "h1dfe08a5g2597g4ab9ga333gb3d724774e7e;2"
+// // Affected entity is drenched in its enemies' blood. It regains [1] per turn.
+// data "Description" "hce154fdag6127g4ce2g8478g6bce4c658984;3"
+// data "DescriptionParams" "RegainHitPoints(2d6)"
+// data "Icon" "statIcons_Slayer_RevitalisingGore"
+// data "StackId" "VEINSPLITTER"
+// data "TickType" "StartTurn"
+// data "RemoveConditions" "not HasStatus('SLAYER_PLAYER',context.Source) and not HasStatus('SLAYER_PLAYER_10',context.Source) and not HasStatus('LOW_BHAALTEMPLE_ORINSLAYER')"
+data "RemoveConditions" "not Tagged('SLAYER')"
+// data "RemoveEvents" "OnStatusRemoved"
+// data "TickFunctors" "RegainHitPoints(2d6)"
+// data "StatusPropertyFlags" "TickingWithSource;DisableOverhead"
+// data "SplatterBloodAmount" "2"
+
 // ==================================== Piercing Growl - 10
 
 new entry "Target_BloodBath_Slayer_10"
@@ -44,7 +66,16 @@ data "SpellType" "Target"
 // using "Target_BloodBath_Slayer"
 using "Target_BloodBath_Slayer_10"
 // data "SpellSuccess" "DealDamage(3d10,Slashing);ApplyStatus(BLEEDING,100,3);ApplyStatus(SELF,VEINSPLITTER_10,100,3)"
+data "SpellSuccess" "DealDamage(3d10+UnarmedDamage*0,Slashing);ApplyStatus(BLEEDING,100,3);ApplyStatus(SELF,VEINSPLITTER_10,100,3)"
 // data "SpellFail" "DealDamage(3d10/2,Slashing)"
+data "SpellFail" "DealDamage(3d10/2+UnarmedDamage*0,Slashing)"
 // data "TooltipDamageList" "DealDamage(3d10,Slashing);"
 data "TooltipDamageList" "DealDamage(3d10,Slashing);RegainHitPoints(4d6,1575c661-c7a1-44c7-b07d-d47b57164841)"
 // data "TooltipStatusApply" "ApplyStatus(BLEEDING,100,3);ApplyStatus(VEINSPLITTER_10,100,3)"
+
+// new entry "VEINSPLITTER_10"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "VEINSPLITTER"
+// data "DescriptionParams" "RegainHitPoints(4d6)"
+// data "TickFunctors" "RegainHitPoints(4d6)"
