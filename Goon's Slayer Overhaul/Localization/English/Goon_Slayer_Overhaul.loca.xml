@@ -3,6 +3,9 @@
 	<!-- "Target_Multiattack_Slayer" -->
 	<content contentuid="h79a7f4d0g7224g4878g9514g0bff2aa591d1" version="1">Lash out with your claws, rending foes to screeching slivers.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, you deal an additional [1] per hit.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.</content>
 	
+	<!-- "Shout_Sacrifice_Slayer" -->
+	<content contentuid="he990e08dg0713g48ccga8fdg07e2713d36a7" version="1">Brand nearby creatures with a sinister mark so that their deaths make you harder to kill.&lt;br&gt;&lt;br&gt;Marked targets are &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, and when they die, you gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+
 	<!-- "" -->
 	<content contentuid="" version="1"></content>
 	<!-- "" -->
