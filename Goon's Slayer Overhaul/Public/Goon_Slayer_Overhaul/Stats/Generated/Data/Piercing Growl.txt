@@ -1,5 +1,6 @@
 // ==================================== Piercing Growl ====================================
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
+// Bug Fix: Now only affects enemies.
 // Changes: Flat +4 Piercing damage replaced with +Proficiency Bonus Piercing damage.
 
 new entry "Zone_Slayer_DeathGrowl"
@@ -17,6 +18,7 @@ data "SpellSuccess" "DealDamage(3d8+ProficiencyBonus, Piercing,Magical);ApplySta
 // data "SpellFail" "DealDamage(3d8+4, Piercing,Magical)"
 data "SpellFail" "DealDamage(3d8+ProficiencyBonus, Piercing,Magical)"
 // data "TargetConditions" "Character()"
+data "TargetConditions" "Character() and Enemy()"
 // data "Icon" "Action_Monster_Slayer_DeathGrowl"
 // // Piercing Growl
 // data "DisplayName" "hf93d65fagd804g40bag8ea9g28d9b92525b8;2"
