@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "Target_Multiattack_Slayer" -->
+	<content contentuid="h79a7f4d0g7224g4878g9514g0bff2aa591d1" version="1">Lash out with your claws, rending foes to screeching slivers.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, you deal an additional [1] per hit.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.</content>
+	
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
+	<!-- "" -->
+	<content contentuid="" version="1"></content>
 </contentList>

@@ -1,8 +1,8 @@
 // ==================================== Multiattack ====================================
-// Bug Fix: No deals unarmed ability modifier Slashing damage on top of the base 1d4 Slashing damage as a baseline, in addition to the extra unarmed ability modifier Slashing damage if the target is Bleeding.
-// Bug Fix: Conditional damage is displayed as different unarmed ability modifier damage instances, instead of 4d6 Slashing damage.
+// Bug Fix: The tooltip damage is accurate and aggregated while still showing "Conditional", instead of 4d6 Slashing damage showing as extra conditional damage.
+// Changes: Now deals unarmed ability modifier Slashing damage on top of the base 1d4 Slashing damage as a baseline, in addition to the extra unarmed ability modifier Slashing damage if the target is Bleeding.
 // Changes: Now looks for more Bleeding-like conditions, instead of just the Bleeding condition itself.
-// TODO: Add unarmed damage for Tavern Brawler synergy?
+// Changes: Now properly functions as unarmed damaged, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
 
 new entry "Target_Multiattack_Slayer"
 type "SpellData"
@@ -11,17 +11,20 @@ data "SpellType" "Target"
 using "Target_Multiattack_Slayer"
 // data "SpellRoll" "Attack(AttackType.MeleeUnarmedAttack); Cast2[Attack(AttackType.MeleeUnarmedAttack)]; Cast3[Attack(AttackType.MeleeUnarmedAttack)]; Cast4[Attack(AttackType.MeleeUnarmedAttack)]"
 // data "SpellSuccess" "IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing);Cast2[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)];Cast3[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)];Cast4[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)]"
-data "SpellSuccess" "IF(HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);Cast2[IF(HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)];Cast3[IF(HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)];Cast4[IF(HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)]"
+data "SpellSuccess" "IF(HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier,Slashing);Cast2[IF(HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier,Slashing)];Cast3[IF(HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier,Slashing)];Cast4[IF(HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing);IF(not HasStatus('SG_Bleeding')):DealDamage(UnarmedDamage+UnarmedMeleeAbilityModifier,Slashing)]"
 // data "Icon" "Action_Monster_Slayer_MultiAttack"
-// Lash out with your claws, rending foes to screeching slivers.
+// // Lash out with your claws, rending foes to screeching slivers.
 // data "Description" "h11343912gbf7bg4647g87bbg759bee685558;2"
+// // Lash out with your claws, rending foes to screeching slivers.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, you deal an additional [1] per hit.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+data "Description" "h79a7f4d0g7224g4878g9514g0bff2aa591d1;1"
 // data "DescriptionParams" "DealDamage(1d4,Slashing)"
-data "DescriptionParams" "DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing)"
-// If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, you deal an additional [1] per hit.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+data "DescriptionParams" "DealDamage(UnarmedMeleeAbilityModifier,Slashing)"
+// // If the target is &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt;, you deal an additional [1] per hit.&lt;br&gt;&lt;br&gt;If the target is &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt;, the attack will be a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
 // data "ExtraDescription" "h64b058c8g59a7g454dg8249gebc30dba1858;6"
+data "ExtraDescription" ""
 // data "ExtraDescriptionParams" "DealDamage(UnarmedMeleeAbilityModifier,Slashing)"
 // data "TooltipDamageList" "DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(4d6,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
-data "TooltipDamageList" "DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
+data "TooltipDamageList" "DealDamage(1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);DealDamage(1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
 // data "PrepareSound" "CrSpell_Prepare_Slayer_TerrifyingLunge"
 // data "PrepareLoopSound" "CrSpell_Loop_Slayer_TerrifyingLunge"
 // data "TargetSound" "CrSpell_Impact_Slayer_Multiattack"
