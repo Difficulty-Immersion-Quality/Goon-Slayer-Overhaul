@@ -1,7 +1,7 @@
 // ==================================== Piercing Growl ====================================
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
 // Bug Fix: The level 10 version now displays the correct conditional healing in the tooltip.
-// Changes: Now properly functions as unarmed damaged, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
+// Changes: Now properly functions as unarmed damage while retaining the die size/static values, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
 
 new entry "Target_BloodBath_Slayer"
 type "SpellData"

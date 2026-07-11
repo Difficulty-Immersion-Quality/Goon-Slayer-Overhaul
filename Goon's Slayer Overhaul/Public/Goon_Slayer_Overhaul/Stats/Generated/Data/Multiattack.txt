@@ -2,7 +2,7 @@
 // Bug Fix: The tooltip damage is accurate and aggregated while still showing "Conditional", instead of 4d6 Slashing damage showing as extra conditional damage.
 // Changes: Now deals unarmed ability modifier Slashing damage on top of the base 1d4 Slashing damage as a baseline, in addition to the extra unarmed ability modifier Slashing damage if the target is Bleeding.
 // Changes: Now looks for more Bleeding-like conditions, instead of just the Bleeding condition itself.
-// Changes: Now properly functions as unarmed damaged, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
+// Changes: Now properly functions as unarmed damage while retaining the die size/static values, enabling more synergy. In particular, it deals magical damage if the character has Ki-Empowered Strikes or similar features, and CharacterUnarmedDamage boosts will apply.
 
 new entry "Target_Multiattack_Slayer"
 type "SpellData"
