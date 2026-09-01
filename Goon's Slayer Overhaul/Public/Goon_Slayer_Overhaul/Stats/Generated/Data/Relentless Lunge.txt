@@ -1,6 +1,7 @@
 // ==================================== Relentless Lunge ====================================
 // Bug Fix: Now uses Maneuver Save DC instead of Spell Save DC.
 // Bug Fix: The tooltip no longer displays an incorrect AOE of 18m, instead showing the actual radius of 5m.
+// Bug Fix: "DamageType" is now Bludgeoning, instead of Slashing.
 
 new entry "Projectile_TerrifyingLunge_Slayer"
 type "SpellData"
@@ -37,6 +38,7 @@ data "SpellRoll" "not SavingThrow(Ability.Strength, ManeuverSaveDC(), AdvantageO
 // data "PrepareEffect" "84015b51-df62-4cd3-9e4b-a4243d3446ed"
 // data "CastEffect" "e165e66f-c3c9-4f62-b24c-17fe2e8f8873"
 // data "DamageType" "Slashing"
+data "DamageType" "Bludgeoning"
 
 // ==================================== Relentless Lunge - 10
 
